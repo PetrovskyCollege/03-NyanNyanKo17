@@ -1,0 +1,104 @@
+-- Создание таблицы Пользователей (Users)
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY, -- Первичный ключ
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    birthday DATE,
+    created_by INT,
+    updated_by INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    -- Добавление комментариев к полям
+    -- username: Имя пользователя
+    -- email: Электронная почта
+    -- password: Хэшированный пароль
+    -- phone: Номер телефона
+    -- birthday: Дата рождения
+    -- created_by: Поле для автора (пользователя, создавшего запись)
+    -- updated_by: Поле для пользователя, который последний раз обновил запись
+    -- created_at: Метка времени создания
+    -- updated_at: Метка времени обновления
+);
+
+-- Создание таблицы Курсов (Courses)
+CREATE TABLE course (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    course_description TEXT,
+    other_info TEXT,
+    created_by INT,
+    updated_by INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    -- Комментарии к полям
+    -- course_name: Название курса
+    -- course_description: Описание курса
+    -- other_info: Дополнительная информация о курсе
+    -- created_by: Поле для автора (пользователя, создавшего запись)
+    -- updated_by: Поле для пользователя, который последний раз обновил запись
+    -- created_at: Метка времени создания
+    -- updated_at: Метка времени обновления
+);
+
+-- Создание таблицы Уроков (Lessons)
+CREATE TABLE lesson (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course_id INT, -- Ссылка на курс
+    lesson_title VARCHAR(100) NOT NULL,
+    lesson_content TEXT,
+    other_info TEXT,
+    created_by INT,
+    updated_by INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    -- Комментарии к полям
+    -- course_id: Ссылка на соответствующий курс
+    -- lesson_title: Название урока
+    -- lesson_content: Теоретическое содержание урока
+    -- other_info: Другая информация о уроке (по желанию)
+    -- created_by: Поле для автора (пользователя, создавшего запись)
+    -- updated_by: Поле для пользователя, который последний раз обновил запись
+    -- created_at: Метка времени создания
+    -- updated_at: Метка времени обновления
+);
+
+-- Создание таблицы Прогресса пользователей (UserProgress)
+CREATE TABLE user_progress (
+    user_id INT,
+    lesson_id INT,
+    completed TINYINT(1) DEFAULT 0, -- Флаг завершения
+    other_info TEXT,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE, -- Вторичный ключ со свойством CASCADE
+    FOREIGN KEY (lesson_id) REFERENCES lesson(id) ON DELETE CASCADE,
+    -- Комментарии к полям
+    -- user_id: Ссылка на пользователя
+    -- lesson_id: Ссылка на урок
+    -- completed: Флаг завершения урока
+    -- other_info: Другая информация о прогрессе (по желанию)
+);
+
+-- Создание таблицы Использования Scrapy (ScrapyUsage)
+CREATE TABLE scrapy_usage (
+    user_id INT,
+    tutorial_completed TINYINT(1) DEFAULT 0, -- Флаг завершения обучения по Scrapy
+    other_info TEXT,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    -- Комментарии к полям
+    -- user_id: Ссылка на пользователя
+    -- tutorial_completed: Флаг завершения обучения по Scrapy
+    -- other_info: Дополнительная информация об использовании Scrapy
+);
+
+-- Создание таблицы Использования BeautifulSoup (BeautifulSoupUsage)
+CREATE TABLE beautifulsoup_usage (
+    user_id INT,
+    tutorial_completed TINYINT(1) DEFAULT 0, -- Флаг завершения обучения по BeautifulSoup
+    other_info TEXT,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    -- Комментарии к полям
+    -- user_id: Ссылка на пользователя
+    -- tutorial_completed: Флаг завершения обучения по BeautifulSoup
+    -- other_info: Дополнительная информация об использовании BeautifulSoup
+);

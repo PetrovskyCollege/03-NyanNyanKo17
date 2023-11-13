@@ -1,0 +1,32 @@
+/*NAV*/
+
+.logo
+{
+    width: 20vh;
+    margin-top: 1vh;
+}
+
+nav > div > a
+{
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 2vh;
+    padding-inline: 3vh;
+}
+
+nav > div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-right: 7vh;
+}
+
+nav
+{
+    justify-content: space-between;
+}

@@ -1,0 +1,97 @@
+
+
+
+/*Форма авторизации*/
+
+h2 {
+  color: #FFF;
+  text-align: center;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 60px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 52px;
+  background: rgba(7, 6, 7, 0.08);
+  width: 67%;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.button {
+  border-radius: 5px;
+  background: #8B83EB;
+  width: 40%;
+  height: 75px;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  border: none;
+}
+
+.join {
+  margin-bottom: 60px;
+}
+
+.login_input {
+  border-radius: 5px;
+  background: #FFF;
+  border: none;
+  width: 40%;
+  height: 56px;
+  flex-shrink: 0;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 770px) {
+  form
+  {
+    width: 90%;
+  }
+
+  .login_input
+  {
+    width: 63%;
+    height: 56px
+  }
+
+  .button
+  {
+    width: 63%;
+    height: 49px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 930px)
+{
+  .button
+  {
+      width: 60%;
+  }
+
+  .login_input 
+  {
+      width: 60%;
+  }
+}
+

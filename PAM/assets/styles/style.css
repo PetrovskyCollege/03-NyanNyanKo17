@@ -1,0 +1,163 @@
+body {
+    background-image: url(../img/Register_BG.svg);
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    font-family: 'Readex Pro', sans-serif;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 1440px;
+    height: auto;
+    margin: auto;
+}
+
+/*Подключение шрифтов*/
+@font-face {
+    font-family: 'Readex Pro';
+    src: url(../fonts/Readex_Pro/static/ReadexPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Readex Pro bold';
+    src: url(../fonts/Readex_Pro/static/ReadexPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Readex Pro SemiBold';
+    src: url(../fonts/Readex_Pro/static/ReadexPro-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Readex Pro light';
+    src: url(../fonts/Readex_Pro/static/ReadexPro-Light.ttf);
+}
+
+/*NAV*/
+
+
+nav>ul>li>a {
+    color: #FFF;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: #182DEB 2px solid;
+}
+
+.logo {
+    width: 17vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 120px;
+}
+
+ul>li {
+    list-style-type: none;
+    /* Убираем маркеры */
+}
+
+footer {
+    background: rgba(84, 83, 88, 0.23);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 17vh;
+}
+
+footer>ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.social {
+    width: 6vh;
+}
+
+footer>ul>li>a {
+    color: #FFF;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin-inline: 10px;
+}
+
+@media (max-width: 770px) {
+    footer {
+        height: 25vh;
+        flex-direction: column;
+    }
+
+    .social {
+        width: 4vh;
+    }
+
+    footer>ul>li>a {
+        font-size: 12px;
+    }
+
+    footer>ul{
+       flex-direction: column;
+    }
+
+    .social_link
+    {
+        flex-direction: row;
+    }
+   
+}
+
+
+@media (min-width: 760px) and (max-width: 930px){
+    footer {
+        height: 33vh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social {
+        width: 4vh;
+    }
+
+    footer>ul>li>a {
+        font-size: 16px;
+    }
+
+    footer>ul{
+       flex-direction: column;
+       gap: 20px;
+    }
+
+    .social_link
+    {
+        flex-direction: row;
+    }
+
+
+}
